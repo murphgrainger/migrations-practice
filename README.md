@@ -1,3 +1,3 @@
-##Degrees by awesome people
+###Migration Practice
 
-* URL to deployed APP: https://cruddegree.herokuapp.com
+* Utilizes knex to migrate and seed a database. App.js express file exists solely for future add-ons to the project.
