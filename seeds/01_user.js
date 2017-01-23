@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt')
+
 exports.seed = function(knex, Promise) {
     // Deletes ALL existing entries
     return knex.raw('delete from "user"; ALTER SEQUENCE user_id_seq RESTART with 3;')
@@ -6,12 +8,12 @@ exports.seed = function(knex, Promise) {
                 id: 1,
                 name: 'Murph',
                 email: 'murph@info.com',
-                password: 'horse123',
+                password: bcrypt.hashSync('horsey123', 10),
             }, {
                 id: 2,
                 name: 'Kiki',
                 email: 'kiki@info.com',
-                password: 'penguin23',
+                password: bcrypt.hashSync('1234lalala', 10),
             }];
             return knex('user').insert(user);
         });
